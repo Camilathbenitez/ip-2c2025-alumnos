@@ -13,6 +13,7 @@ def init(vals):
 def step():
     global items, n, i, j
 
+  # - Si i >= n: devolver {"done": True}.
     if i >= n:
         return {"done": True}
 
@@ -22,14 +23,18 @@ def step():
         b = j
         return {"a": a, "b": b, "swap": False, "done": False}
 
-    a = j - 1
-    b = j
+       # - Mientras j > 0 y items[j-1] > items[j]: hacer UN swap adyacente (j-1, j) y devolverlo con swap=True
+
     if j > 0 and items[a] > items[b]:
+        a = j - 1
+        b = j
         items[a], items[b] = items[b], items[a]
         j -= 1
         return {"a": a, "b": b, "swap": True, "done": False}
 
-    i += 1
+#Si ya no hay que desplazar: avanzar i y setear j=None.
+
+    i = i+ 1
     j = None
     a = i - 1
     b = i
