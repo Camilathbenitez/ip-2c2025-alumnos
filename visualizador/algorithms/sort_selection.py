@@ -39,3 +39,21 @@ def step():
         else:
             fase = "swap"
             return {"a": i, "b": min_idx, "swap": False, "done": False}
+        
+    elif fase == "swap":
+        
+        swap_realizado = False
+        a = i
+        b = min_idx
+        
+        if min_idx != i:
+            items[i], items[min_idx] = items[min_idx], items[i]
+            swap_realizado = True
+            
+        # Reinicio
+        i += 1
+        j = i + 1
+        min_idx = i
+        fase = "buscar"
+        
+        return {"a": a, "b": b, "swap": swap_realizado, "done": False}
