@@ -7,6 +7,12 @@ Existen múltiples estrategias (Bubble, Selection, Insertion, Quick, Merge, Shel
 ---
 ## Algoritmos implementados
 
+**Bublee Sort ✓**
+
+**Insertion Sort ✓**
+
+**Selection Sort ✓**
+
 ---
 
 
